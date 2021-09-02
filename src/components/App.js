@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Navigation from "./Navigation";
 import ToDosContainer from "./ToDosContainer";
 import DoneContainer from "./DoneContainer";
-import InputField from "./InputField";
-import Button from "./Button";
+// import InputField from "./InputField";
+// import Button from "./Button";
+import InputContainer from "./InputContainer";
 import "../css/styles.css";
 
 // Hard coded array of items
@@ -51,19 +52,16 @@ const App = () => {
       {/* Child Component 1 - Navigation */}
       <Navigation />
 
-      {/* Input container */}
-      <div className="input-container">
-        {/* Input Field */}
-        <InputField
-          onChangeProp={updateCurrentInput}
-          valueProp={currentInput}
-        />
-        {/* Input submit button */}
-        <Button updateToDosProp={addNewInput} />
-      </div>
-      {/* Child Component 2 - ToDosContainer */}
+      {/* Child Component 2 - Input container */}
+      <InputContainer
+        onChangeProp={updateCurrentInput}
+        valueProp={currentInput}
+        updateToDosProp={addNewInput}
+      />
+
+      {/* Child Component 3 - ToDosContainer */}
       <ToDosContainer items={toDos} />
-      {/* Child Component 3 - DoneContainer */}
+      {/* Child Component 4 - DoneContainer */}
       {/* <DoneContainer items={doneItems} /> */}
     </div>
   );

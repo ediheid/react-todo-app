@@ -5,8 +5,8 @@ const InputField = (props) => {
     <input
       placeholder="..."
       className="input-field"
-      onChange={props.onChangeProp}
-      value={props.valueProp}
+      onChange={props.onChangePropTwo}
+      value={props.valuePropTwo}
     ></input>
   );
 };
