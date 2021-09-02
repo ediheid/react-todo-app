@@ -2,9 +2,12 @@ import React from "react";
 
 const InputField = (props) => {
   return (
-    <div>
-      <input onChange={props.onChangeProp} value={props.valueProp}></input>
-    </div>
+    <input
+      placeholder="..."
+      className="input-field"
+      onChange={props.onChangeProp}
+      value={props.valueProp}
+    ></input>
   );
 };
 

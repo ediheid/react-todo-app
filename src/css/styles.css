@@ -1,19 +1,19 @@
 * {
-    font-family: monospace;
+  font-family: monospace;
 }
 
 body {
-    margin: 0;
-    background: #20272a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: #20272a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-  
+
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,88 +25,112 @@ code {
 }
 
 .app .btn {
-    border: none;
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 20px;
-    width: 70px;
-    background: #184b43;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
+  border: none;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 20px;
+  width: 70px;
+  background: #184b43;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .app .btn:focus {
-      outline: none;
+  outline: none;
 }
 
 .app .btn:hover {
-      opacity: 0.9;
+  opacity: 0.9;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1d2226;
-    min-height: 60px;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d2226;
+  min-height: 60px;
+  padding: 10px;
+  margin-bottom: 40px;
 }
 
 nav a {
-      color: white;
+  color: white;
 }
 
 h1 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .todos-container {
-    padding: 20px 10px;
+  padding: 20px 10px;
 }
 
 .todos-container .todo-form .input-item input {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    background: #3c6862;
-    margin-right: 10px;
-    color: white;
-    font-size: 1.2em;
-    min-width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #3c6862;
+  margin-right: 10px;
+  color: white;
+  font-size: 1.2em;
+  min-width: 300px;
 }
 
 .todos-container .todos {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .todos-container .todos .todo-item {
-    padding: 5px 10px;
-    background: #3c6862;
-    margin: 10px 0;
-    border-radius: 50px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 5px 10px;
+  background: #3c6862;
+  margin: 10px 0;
+  border-radius: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .done-container {
-    padding: 10px;
+  padding: 10px;
 }
 
 .done-container .done-item {
-    padding: 5px 10px;
-    background: #3c6862;
-    margin: 10px 0;
-    border-radius: 50px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 5px 10px;
+  background: #3c6862;
+  margin: 10px 0;
+  border-radius: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .done-container .done-item p {
-    text-decoration: line-through;
-    opacity: 0.5;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.input-field,
+.input-button {
+  margin: 20px 0 0 20px;
+  padding: 0.3rem;
+}
+
+.input-button {
+  border-radius: 50px;
+  padding: 5px 10px;
+  outline: rgb(194, 17, 17);
+  border: 1px solid rgb(194, 17, 17);
+  color: rgb(194, 17, 17);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 550;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

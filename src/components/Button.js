@@ -3,7 +3,9 @@ import React from "react";
 const Button = (props) => {
   return (
     <div>
-      <button onClick={props.updateToDosProp}>Create new Todo item</button>
+      <button className="input-button" onClick={props.updateToDosProp}>
+        Add to list!
+      </button>
     </div>
   );
 };

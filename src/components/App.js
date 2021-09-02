@@ -39,19 +39,28 @@ const App = () => {
       setTodos(toDos.concat(currentInput));
 
       setCurrentInput("");
-    } else {
-      alert(`Please type something before trying to create a new ToDo item!`);
     }
+
+    // else {
+    //   alert(`Please type something before trying to create a new ToDo item!`);
+    // }
   };
 
   return (
     <div className="app">
       {/* Child Component 1 - Navigation */}
       <Navigation />
-      {/* Input Field */}
-      <InputField onChangeProp={updateCurrentInput} valueProp={currentInput} />
-      {/* Input submit button */}
-      <Button updateToDosProp={addNewInput} />
+
+      {/* Input container */}
+      <div className="input-container">
+        {/* Input Field */}
+        <InputField
+          onChangeProp={updateCurrentInput}
+          valueProp={currentInput}
+        />
+        {/* Input submit button */}
+        <Button updateToDosProp={addNewInput} />
+      </div>
       {/* Child Component 2 - ToDosContainer */}
       <ToDosContainer items={toDos} />
       {/* Child Component 3 - DoneContainer */}
