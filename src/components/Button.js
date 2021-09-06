@@ -4,7 +4,7 @@ const Button = (props) => {
   return (
     <div>
       <button className="input-button" onClick={props.updateToDosPropTwo}>
-        Add to list!
+        Add to List!
       </button>
     </div>
   );

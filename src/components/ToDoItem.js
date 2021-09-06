@@ -5,13 +5,18 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const checkIcon = <FontAwesomeIcon icon={faCheck} />;
 
 const ToDoItem = (props) => {
+  const deleteFunction = () => {
+    props.deleteItem(props.id);
+  };
   return (
     <div className="todo-item">
       {/* Take the "todo" object received in the "item" prop, and use the value of its "text" property */}
       <p>{props.item}</p>
       <div>
         {/* Use a font awesome icon to render a "check" icon - see line 9 for creating the icon component */}
-        <button className="btn">{checkIcon}</button>
+        <button className="btn" onClick={deleteFunction}>
+          {checkIcon}
+        </button>
       </div>
     </div>
   );

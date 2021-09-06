@@ -27,24 +27,36 @@ import "../css/styles.css";
 const App = () => {
   // New tasks with hooks..
 
+  const [currentId, setCurrentId] = useState(0);
+
   const [toDos, setTodos] = useState([]);
 
-  const [currentInput, setCurrentInput] = useState("");
+  const [currentInput, setCurrentInput] = useState({
+    id: setCurrentId,
+    text: "",
+  });
 
   const updateCurrentInput = (event) => {
-    setCurrentInput(event.target.value);
+    setCurrentInput({ id: currentId, text: event.target.value });
   };
 
   const addNewInput = () => {
-    if (currentInput.length > 0) {
+    if (currentInput.text.length > 0) {
       setTodos(toDos.concat(currentInput));
 
-      setCurrentInput("");
+      setCurrentId(currentId + 1);
+
+      setCurrentInput({ id: currentId, text: "" });
     }
 
     // else {
     //   alert(`Please type something before trying to create a new ToDo item!`);
     // }
+  };
+
+  // Delete ToDo item with specific ID
+  const deleteItem = (deletedId) => {
+    setTodos(toDos.filter((toDos) => toDos.id !== deletedId));
   };
 
   return (
@@ -55,12 +67,13 @@ const App = () => {
       {/* Child Component 2 - Input container */}
       <InputContainer
         onChangeProp={updateCurrentInput}
-        valueProp={currentInput}
+        valueProp={currentInput.text}
         updateToDosProp={addNewInput}
       />
 
       {/* Child Component 3 - ToDosContainer */}
-      <ToDosContainer items={toDos} />
+      <ToDosContainer items={toDos} deleteItemProp={deleteItem} />
+
       {/* Child Component 4 - DoneContainer */}
       {/* <DoneContainer items={doneItems} /> */}
     </div>
