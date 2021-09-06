@@ -57,19 +57,26 @@ const App = () => {
     // }
   };
 
-  // Delete ToDo item with specific ID
-  // const deleteItem = (deletedId) => {
-  //   setTodos(toDos.filter((toDos) => toDos.id !== deletedId));
-  // };
-
-  // * Prop for above function -- deleteItemProp={deleteItem}
-
-  // Instead of deleting item, change to 'Don'
+  // Done Function
 
   const setToDoItemAsDone = (itemId) => {
     setTodos(toDos.filter((todo) => todo.id !== itemId));
     setDoneItems(doneItems.concat(toDos.filter((todo) => todo.id === itemId)));
   };
+
+  // Redo function
+
+  const reDoItem = (itemId) => {
+    setDoneItems(doneItems.filter((done) => done.id !== itemId));
+    setTodos(toDos.concat(doneItems.filter((todo) => todo.id === itemId)));
+  };
+
+  // Delete Function
+  const deleteItem = (deletedId) => {
+    setDoneItems(doneItems.filter((item) => item.id !== deletedId));
+  };
+
+  // * Prop for above function -- deleteItemProp={deleteItem}
 
   return (
     <div className="app">
@@ -87,7 +94,11 @@ const App = () => {
       <ToDosContainer items={toDos} moveItemToDone={setToDoItemAsDone} />
 
       {/* Child Component 4 - DoneContainer */}
-      <DoneContainer items={doneItems} />
+      <DoneContainer
+        items={doneItems}
+        reDoItem={reDoItem}
+        deleteItem={deleteItem}
+      />
     </div>
   );
 };

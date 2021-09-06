@@ -6,7 +6,15 @@ const DoneContainer = (props) => {
   // For every "todo" object inside the array (e.g. "Wake up" or "Walk the dog")...
   // ... create a new <ToDoItem /> to represent that task.
   const doneItems = props.items.map((todo) => {
-    return <DoneItem item={todo} key={todo.id} id={todo.id} />;
+    return (
+      <DoneItem
+        item={todo}
+        key={todo.id}
+        id={todo.id}
+        reDoItem={props.reDoItem}
+        deleteItem={props.deleteItem}
+      />
+    );
   });
 
   return (

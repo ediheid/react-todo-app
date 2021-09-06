@@ -41,7 +41,18 @@ code {
 }
 
 .app .btn:hover {
-  opacity: 0.9;
+  opacity: 0.8;
+}
+
+.app .reDoButton {
+  /* background-color: rgb(24, 65, 21); */
+  background-color: #e6a200;
+  margin: 5px;
+}
+
+.app .closeButton {
+  background-color: #771d4d;
+  margin: 5px;
 }
 
 nav {
@@ -102,7 +113,9 @@ h1 {
 }
 
 .done-container {
-  padding: 10px;
+  /* padding: 10px; */
+
+  margin: 20px 0 0 20px;
 }
 
 .done-container .done-item {
@@ -119,6 +132,7 @@ h1 {
 .done-container .done-item p {
   text-decoration: line-through;
   opacity: 0.5;
+  text-overflow: clip;
 }
 
 .input-field,
