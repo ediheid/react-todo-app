@@ -11,7 +11,8 @@ const ToDosContainer = (props) => {
         item={todo.text}
         key={todo.id}
         id={todo.id}
-        deleteItem={props.deleteItemProp}
+        // deleteItem={props.deleteItemProp}
+        moveItem={props.moveItemToDone}
       />
     );
   });

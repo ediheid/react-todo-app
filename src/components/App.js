@@ -31,13 +31,16 @@ const App = () => {
 
   const [toDos, setTodos] = useState([]);
 
+  const [doneItems, setDoneItems] = useState([]);
+
   const [currentInput, setCurrentInput] = useState({
-    id: setCurrentId,
+    id: currentId,
     text: "",
+    done: false,
   });
 
   const updateCurrentInput = (event) => {
-    setCurrentInput({ id: currentId, text: event.target.value });
+    setCurrentInput({ id: currentId, text: event.target.value, done: false });
   };
 
   const addNewInput = () => {
@@ -46,7 +49,7 @@ const App = () => {
 
       setCurrentId(currentId + 1);
 
-      setCurrentInput({ id: currentId, text: "" });
+      setCurrentInput({ id: currentId, text: "", done: false });
     }
 
     // else {
@@ -55,8 +58,17 @@ const App = () => {
   };
 
   // Delete ToDo item with specific ID
-  const deleteItem = (deletedId) => {
-    setTodos(toDos.filter((toDos) => toDos.id !== deletedId));
+  // const deleteItem = (deletedId) => {
+  //   setTodos(toDos.filter((toDos) => toDos.id !== deletedId));
+  // };
+
+  // * Prop for above function -- deleteItemProp={deleteItem}
+
+  // Instead of deleting item, change to 'Don'
+
+  const setToDoItemAsDone = (itemId) => {
+    setTodos(toDos.filter((todo) => todo.id !== itemId));
+    setDoneItems(doneItems.concat(toDos.filter((todo) => todo.id === itemId)));
   };
 
   return (
@@ -72,10 +84,10 @@ const App = () => {
       />
 
       {/* Child Component 3 - ToDosContainer */}
-      <ToDosContainer items={toDos} deleteItemProp={deleteItem} />
+      <ToDosContainer items={toDos} moveItemToDone={setToDoItemAsDone} />
 
       {/* Child Component 4 - DoneContainer */}
-      {/* <DoneContainer items={doneItems} /> */}
+      <DoneContainer items={doneItems} />
     </div>
   );
 };
